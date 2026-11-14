@@ -41,8 +41,15 @@ export const ExplorerPage: React.FC = () => {
             {/* Yuqori sarlavha va umumiy o'zlashtirish ko'rsatkichi */}
             <header className="explorer-page__header">
                 <div className="explorer-page__brand">
-                    <h1>PC Hardware 3D Akademiya</h1>
-                    <span>Interaktiv Qo‘llanma</span>
+                    <div className="explorer-page__brand">
+                        <img
+                            src="../../../logo.jfif"
+                            alt="PC Hardware 3D Academy Logo"
+                            style={{ width: '36px', height: '36px' }}
+                        />
+                        <h1>PC Hardware 3D Academy</h1>
+                        <span>Interaktiv Qo‘llanma</span>
+                    </div>
                 </div>
 
                 <div className="explorer-page__progress-box">
