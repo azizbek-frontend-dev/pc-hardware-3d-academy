@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/banner.png" alt="PC Hardware 3D Academy Banner" width="100%" />
+  <img src="./logo.jfif" alt="PC Hardware 3D Academy Banner" width="100%" />
 </div>
 
 # 🖥️ PC Hardware 3D Academy
