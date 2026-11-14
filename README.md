@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./public/banner.png" alt="PC Hardware 3D Academy Banner" width="100%" />
+</div>
+
 # 🖥️ PC Hardware 3D Academy
 
 An interactive 3D web application designed to help learners understand computer hardware architecture, component functions, and real-world capabilities through visual exploration and gamified quizzes.
