@@ -1,0 +1,77 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    background-color: $bg-primary;
+    color: $text-primary;
+    font-family: $font-sans;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.2s ease;
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+
+// Umumiy yordamchi klasslar
+.btn-primary {
+    background: linear-gradient(135deg, $accent-primary, $accent-secondary);
+    color: #0b1120;
+    font-weight: 600;
+    padding: 0.7rem 1.25rem;
+    border-radius: $radius-sm;
+    font-size: 0.95rem;
+
+    &:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+    }
+}
+
+.btn-outline {
+    background: transparent;
+    color: $text-primary;
+    border: 1px solid $border-subtle;
+    padding: 0.65rem 1.15rem;
+    border-radius: $radius-sm;
+    font-weight: 500;
+
+    &:hover:not(:disabled) {
+        border-color: $accent-primary;
+        background: rgba(56, 189, 248, 0.08);
+    }
+}
+
+.badge-success {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 999px;
+    background: rgba($success-color, 0.16);
+    color: $success-color;
+    border: 1px solid rgba($success-color, 0.35);
+}

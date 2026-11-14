@@ -1,0 +1,187 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+.explorer-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: $bg-primary;
+
+    // Yuqori Header va Progress Bar
+    &__header {
+        @include flex-between;
+        height: 72px;
+        padding: 0 1.75rem;
+        background: rgba(15, 23, 42, 0.92);
+        border-bottom: 1px solid $border-subtle;
+        z-index: 50;
+        gap: 1rem;
+
+        @include respond-to($bp-mobile) {
+            height: 64px;
+            padding: 0 1rem;
+        }
+    }
+
+    &__brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        h1 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, $text-primary, $accent-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            @include respond-to($bp-mobile) {
+                font-size: 1rem;
+            }
+        }
+
+        span {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+            background: rgba($accent-primary, 0.14);
+            color: $accent-primary;
+            font-weight: 600;
+
+            @include respond-to($bp-mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__progress-box {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__progress-info {
+        text-align: right;
+
+        span {
+            display: block;
+            font-size: 0.8rem;
+            color: $text-secondary;
+        }
+
+        strong {
+            font-size: 0.9rem;
+            color: $success-color;
+        }
+    }
+
+    &__progress-track {
+        width: 150px;
+        height: 8px;
+        background: rgba(148, 163, 184, 0.18);
+        border-radius: 999px;
+        overflow: hidden;
+
+        @include respond-to($bp-mobile) {
+            width: 85px;
+        }
+    }
+
+    &__progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, $accent-primary, $success-color);
+        border-radius: 999px;
+        transition: width 0.4s ease;
+    }
+
+    // Asosiy 3D ishchi maydon
+    &__workspace {
+        position: relative;
+        flex: 1;
+        width: 100%;
+        height: calc(100vh - 72px);
+    }
+
+    // Chap yuqori burchakdagi tezkor qurilmalar menyusi
+    &__quick-nav {
+        @include glass-panel;
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        padding: 0.85rem;
+        border-radius: $radius-md;
+        z-index: 30;
+        width: 220px;
+
+        @include respond-to($bp-tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            width: auto;
+            max-width: calc(100% - 32px);
+            gap: 0.4rem;
+            padding: 0.6rem;
+        }
+
+        h3 {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: $text-muted;
+            margin-bottom: 0.6rem;
+            padding-left: 0.35rem;
+
+            @include respond-to($bp-tablet) {
+                display: none;
+            }
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+
+        @include respond-to($bp-tablet) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__nav-item {
+        @include flex-between;
+        width: 100%;
+        padding: 0.55rem 0.75rem;
+        border-radius: $radius-sm;
+        background: transparent;
+        color: $text-secondary;
+        font-size: 0.88rem;
+        font-weight: 500;
+        text-align: left;
+
+        @include respond-to($bp-tablet) {
+            width: auto;
+            padding: 0.4rem 0.7rem;
+            font-size: 0.8rem;
+        }
+
+        &:hover {
+            background: rgba(148, 163, 184, 0.12);
+            color: $text-primary;
+        }
+
+        &.active {
+            background: rgba($accent-primary, 0.18);
+            color: $accent-primary;
+            border: 1px solid rgba($accent-primary, 0.4);
+            font-weight: 600;
+        }
+
+        .check-icon {
+            color: $success-color;
+            font-weight: 800;
+            margin-left: 0.4rem;
+        }
+    }
+}
